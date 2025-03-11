@@ -1,0 +1,3 @@
+anomalib[full]
+numpy<2
+ollama<0.4

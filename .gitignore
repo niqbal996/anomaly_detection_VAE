@@ -6,6 +6,10 @@ __pycache__/
 # C extensions
 *.so
 
+datasets/MVTec/
+results/ 
+phenobench_instances/
+
 # Distribution / packaging
 .Python
 build/
