@@ -1,0 +1,57 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Infer Image",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "anomalib/tools/inference/lightning_inference.py",
+            "console": "integratedTerminal",
+            "args": [
+                // "--model.init_args.model",
+                // "draem",
+                "--data.path",
+                "/home/niqbal/git/aa_uda/anomaly_detection_VAE/datasets/MVTec/leather/test/color",
+                "--ckpt_path",
+                "results/Draem/MVTec/leather/latest/weights/lightning/model.ckpt",
+                "--output",
+                "results/Draem/MVTec/leather/latest/inference/leather_001.png",
+                "--show"
+            ]
+        },
+        {
+            "name": "Encode Image",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "main.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--dataset1_root",
+                "/mnt/e/datasets/PhenoBench",
+                "--dataset2_root",
+                "/mnt/e/datasets/sugarbeet_syn_v6"
+            ]
+        },
+        {
+            "name": "Train Draem",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "draem_train.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--dataset_root",
+                "/mnt/e/datasets/MVTec"
+            ]
+        },
+        {
+            "name": "Process phenobench",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "extract_phenobench.py",
+            "console": "integratedTerminal",
+        }
+    ]
+}
